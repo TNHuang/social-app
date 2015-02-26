@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times do 
+20.times do 
 	@user = User.create({
 			first_name: Faker::Name.first_name,
 			last_name: Faker::Name.last_name,
@@ -20,12 +20,13 @@
 		})
 	end
 end
+guest = User.create({ first_name: "Guest", last_name: "User", email: "guest@user.com", password: "123456"});
 
-User.create({ first_name: "Guest", last_name: "User", email: "guest@user.com", password: "123456"});
-
+guest.posts.create({ title: "Hello Guest User",
+					body: "You can post new post on the form above, on the header you can search for new friend base on their name, on the side bar you can click on your friend link to see their feed, you can also approve and deny friend request under the pending friend request list"})
 
 user_ids = User.all.map {|u| u.id}
-friendship_count = 30
+friendship_count = 60
 
 left_friend_id = user_ids.sample
 right_friend_id = user_ids.sample

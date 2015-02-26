@@ -1,0 +1,9 @@
+%ol
+	- if @is_current_user
+		%li
+			%h4 create new post
+			= render "shared/post_form", :is_create => false, :form_action => user_posts_url(:user_id => @user.id), :form_method => "POST", :btn_msg => "Create Post"
+
+	- @all_posts.each do |post|
+		%li
+			= render "shared/post", :post => post[:post], :author => post[:author], :post_age => post[:post_age]

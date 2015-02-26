@@ -1,0 +1,18 @@
+#header.clearfix
+	
+	.title
+		Social App Sample
+	.container.clearfix
+		.search-box
+			%form{ :action => search_friend_url, :method => "GET"}
+				%label{:for => "query"} Search for new friends:
+				%input{:type => 'text', :name => "query", :class_name => "query-box"}
+				%input{:type => 'submit', :value => "Search", :class => "button"}
+		.name
+			Signed In:
+			%strong 
+				= link_to "#{current_user.full_name}", user_url(current_user)
+		.btn
+			= link_to "Sign Out", session_url(current_user), :method => :delete
+		.btn
+			= link_to "Sign Out All Sessions", sign_out_all_url, :method => :delete

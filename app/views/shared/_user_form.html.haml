@@ -1,0 +1,25 @@
+%form{ :action => form_action, :method => form_method }
+	= form_auth
+	%table
+		%tr
+			%td
+				%label{:for => "user[first_name]"} First Name:
+			%td
+				%input{:type => "text", :name => "user[first_name]", :placeholder => "John"}
+		%tr
+			%td
+				%label{:for => "user[last_name]"} Last Name:
+			%td
+				%input{:type => "text", :name => "user[last_name]", :placeholder => "Doe"}
+		%tr
+			%td	
+				%label{:for => "user[email]"} Email:
+			%td
+				%input{:type => "text", :name => "user[email]", :placeholder => "abc@example.com"}
+		- if is_create 
+			%tr
+				%td
+					%label{:for => "user[password]"} Password:
+				%td
+					%input{:type => "password", :name => "user[password]"}
+	%input{:type => 'submit', :value => btn_msg, :class => "button"}

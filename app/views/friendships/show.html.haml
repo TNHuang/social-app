@@ -1,0 +1,7 @@
+%ol
+	- @new_friends.each do |new_friend|
+		%li
+			= render "shared/friend", :friend => new_friend
+			%form{:action => user_request_friend_url(:user_id => current_user.id, :right_friend_id => new_friend.id), :method => "POST"}
+				= form_auth
+				%input{:type => "submit", :value => "Send Friend Request", :class_name => "button"}

@@ -1,0 +1,27 @@
+<% if (obj === "user"){ %>
+	<h2>Create your profile and join the social network</h2>
+	<% var btn_msg = "Create!" %>
+<%} else if (obj === "session"){%>
+	<h2>Sign in for free! multi-session also avaliable for free!</h2>
+	<% var btn_msg = 'SignIn' %>
+<% }%>
+
+<form class='user-form clearfix'>
+	<ul>
+		<li class='name-field'>
+			<input type='text' name='user[first_name]' id="first-name" placeholder="First name"> 
+			<input type='text' name='user[last_name]' id="last-name" placeholder="Last name">
+		</li>
+		<li>
+			<input type='text' name='user[email]' id="email" placeholder="Email">
+		</li>
+
+		<% if (action === "create" ) { %>
+			<li>
+				<input type='password' name='user[password]' id="password" placeholder="Password">
+			</li>
+		<% } %>
+			
+	</ul>
+		<input type='submit' value=<%= btn_msg%> class='submit-btn'>
+</form>

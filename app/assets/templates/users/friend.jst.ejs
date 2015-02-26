@@ -1,0 +1,26 @@
+<span class='name'>
+	<a href="#/users/<%= friend.id %>" >
+	<%= friend.escape('name') %>
+	</a>
+</span>
+
+<% var fc = parseInt(friend.escape('friends_count')) %>
+<% var pc = parseInt(friend.escape('posts_count')) %>
+
+<span class='info'>
+	<% if (fc > 0) { %>
+		<span>&nbsp<%= fc %> friend<%= fc > 1 ? "s" : ""%>&nbsp</span>
+	<% } %>	
+
+	<% if (pc > 0) { %>
+		<span>&nbsp<%= pc %> post<%= pc > 1 ? "s" : ""%></span>
+	<% } %>
+</span>
+	
+	
+<% if (state === "pending") { %>
+	<span class='circle-btn approve-friendship'>✔</span>
+	<span class='circle-btn deny-friendship'>✖</span>
+<% } else if (state === "sending") { %>
+	<span class='long-btn send-friendship'>Send Friend Request</span>
+<% } %>

@@ -1,0 +1,14 @@
+<div class="title">Social App Sample</div>
+<div class='container clearfix'>
+	<div class='search-box'>
+		<form>
+			<input type='text' name="query" id="query-box" placeholder="Seach for new friends">
+			<input type="submit" value="Search" class="btn searh">
+		</form>
+	</div>
+	<div class="name">
+		Signed In: <strong><a href="#users/<%= current_user.id %>" + ><%= current_user.escape("name")%></a></strong>
+	</div>
+	<div class="btn sign-out">Sign Out</div>
+	<div class="btn sign-out-all">Sign out all sessions</div>
+</div>

@@ -1,0 +1,21 @@
+#sidebar.clearfix
+	%h4 user stat:
+	.profile-info
+		.current-user
+			= render "shared/friend", :friend => current_user
+
+	%h4 current friends:
+	.friends-container
+		%ol
+			- @friends.each do |friend|
+				%li.clearfix
+					= render "shared/friend", :friend => friend
+
+	%h4 pending friends:
+	.friends-container
+		%ol
+			- @pending_friends.each do |pending_friend|
+				%li.clearfix
+					= render "shared/friend", :friend => pending_friend
+					= link_to "approve", user_approve_friend_url(:user_id => current_user.id, :left_friend_id => pending_friend.id ), :method => :patch
+					= link_to "deny", user_friendship_url(:user_id => current_user.id, :left_friend_id => pending_friend.id, :id => 1), :method => :delete

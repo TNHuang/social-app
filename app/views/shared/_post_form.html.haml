@@ -1,0 +1,14 @@
+%form{ :action => form_action, :method => form_method }
+	= form_auth
+	%table
+		%tr
+			%td
+				%label{:for => "post[title]"} Title:
+			%td
+				%input{:type => "text", :name => "post[title]"}
+		%tr
+			%td
+				%label{:for => "post[body]"} Body:
+			%td
+				%textarea.body-input{ :name => "post[body]"}
+	%input{:type => 'submit', :value => btn_msg, :class => "submit-btn"}

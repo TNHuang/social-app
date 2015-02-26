@@ -1,0 +1,14 @@
+<div class='message clearfix'>
+	<img src="//a.disquscdn.com/1424807135/images/noavatar92.png" class="avatar">
+	<div class='msg-container'>
+		<div class='title'>
+			<%= post.escape('title')%>
+		</div>
+		<div class='author'>
+			posted by <%= post.escape('author') %> <%= post.escape('postAge') %> ago
+		</div>
+		<div class='msg-body'>
+			<%= post.escape('body')%>
+		</div>
+	</div>	
+</div>

@@ -1,0 +1,12 @@
+%span.name
+	= link_to "#{friend.full_name}", user_url(friend) 
+	- fc = friend.friends_count
+	- pc = friend.posts_count
+
+%span.info
+	- if fc > 0
+		%span 
+			#{fc} friend#{ fc > 1 ? 's' : ''}
+	- if pc > 0
+		%span 
+			#{pc} post#{ pc > 1 ? 's' : ''}

@@ -1,0 +1,7 @@
+
+.message.clearfix
+	%img.avatar{:src => "//a.disquscdn.com/1424807135/images/noavatar92.png"}
+	.msg-container
+		%span.title > #{post.title}
+		%span.author posted by #{author} #{post_age} ago
+		.msg-body #{post.body}

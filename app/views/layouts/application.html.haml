@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title SocialApp
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body   
+    - unless flash[:errors].nil?
+      %ol
+        - flash[:errors].each do |error|
+          %li #{error}
+    - if signed_in?
+      = render "layouts/header"
+      = render "layouts/sidebar"
+      #main-container
+        #main
+          = yield
+    - else
+      #root
+        = yield
+    
+

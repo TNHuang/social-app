@@ -1,0 +1,45 @@
+#header {
+	background-color: $header-color;
+	color: white;
+
+	.title {
+		font-size: 20px;
+		font-weight: bold;
+		font-family: $font;
+		margin: 15px 0 0 15px;
+		display: block;
+		float: left;
+	}
+
+	.container {
+		padding: 15px 0;
+		display: block;
+		float: right;
+
+		.name > strong:hover {
+			text-decoration: underline;
+		}
+
+		& > * {
+			float: left;
+			margin-right: 5px;
+			padding: 5px 15px;
+		}
+
+		& > .btn {
+			font-weight: bold;
+			background: #0c9;
+			border-bottom: 2px solid #0c2;
+			border-right: 2px solid #0c2;
+			border-radius: 5px;
+			transition: background, color, 0.5s;
+			cursor: pointer;
+
+			&:hover{
+				color: #0c9;
+				background: white;
+				text-decoration: underline;
+			}
+		}
+	}
+}

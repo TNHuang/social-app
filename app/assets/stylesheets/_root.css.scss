@@ -1,0 +1,119 @@
+#root {
+	width: 700px;
+	margin: 50px auto;
+	padding: 20px;
+	background: $root-color;
+	color: white;
+	border-radius: 5px;
+
+	h2 {
+		font-size: 20px;
+		text-align: center;
+		border-bottom: 1px solid white;
+		padding: 10px;
+	}
+
+	.about-container {
+		margin-top: 10px;
+		width: 50%;
+		display: block;
+		float: left;
+		li {
+			padding: 10px;
+			strong {
+				font-weight: bold;
+				font-size: 20px;
+			}
+		}
+	}
+
+	.btn-container {
+		margin-top: 10px;
+		float: right;
+		width: 40%;
+		font-weight: bold;
+
+		div {
+			padding: 10px 0;
+		}
+		a {
+			position: relative;
+			display: block;
+			width: 60%;
+			padding: 10px 0;
+			margin-bottom: 10px;
+
+			border-radius: 5px;
+			float: left;
+
+			text-align: center;
+			background: linear-gradient( #0c6, #0a5);
+
+			transition: background, color, 0.5s;
+			
+			&:hover {
+				color: #06c;
+				background: linear-gradient( #0a5, #0c6);
+				text-decoration: underline;
+	
+			}
+		}
+	}
+
+	.user-form {
+		width:60%;
+		display: block;
+		margin-top: 20px;
+		margin-left: 20%;
+		li {
+			margin: 15px 0;
+		}
+		input {
+			border-radius: 5px;
+			margin: 0;
+			padding: 5px 10px;
+			width: 95%;
+			height: 30px;
+
+			border: 1px solid #ccc;
+			font-weight: bold;
+			font-size: 15px;
+			font-family: $font;
+		}
+		.name-field {
+			& > input{
+				width: 43%;
+			}
+			
+			& > input:last-child{
+				float: right;
+			}
+		}
+		.submit-btn {
+			cursor: pointer;
+			color: white;
+			width: 40%;
+			height: 40px;
+			margin-right: 0;
+			padding: 10px 0;
+
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			border-bottom: 2px solid #093;
+			background: linear-gradient( #0c6, #0a5);
+			
+			transition: all 0.5s;
+			&:hover{
+				/*color: black;
+				background: linear-gradient( #ccc, #fff);
+				text-decoration: underline;
+				border-bottom: 2px solid #777;*/
+				color: #06c;
+				background: linear-gradient( #ccc, #fff);
+				text-decoration: underline;
+			}
+		}
+	}
+
+}

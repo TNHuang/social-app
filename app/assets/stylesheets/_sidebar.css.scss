@@ -1,0 +1,13 @@
+#sidebar {
+	background: $sidebar-color;
+	width: 20%;
+	height: 600px;
+	display: block;
+	overflow-y: auto; 
+	float: left;
+	padding-left: 30px;
+	margin-left: 200px;
+	margin-top: 5px;
+
+	@include friends-listing;
+}

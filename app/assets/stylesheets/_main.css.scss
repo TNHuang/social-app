@@ -1,0 +1,74 @@
+#main-container {
+	float: left;
+	display:block;
+	height: 600px;
+	width: 48%;
+	background: $sidebar-color;
+	border-left: 5px solid $background-color;
+	margin-top: 5px;
+	overflow-y: auto;
+
+	#main {
+		@include friends-listing;
+		display: block;
+		width: 90%;
+		float: left;
+		margin: 20px 0 0 20px;
+
+		.body-input {
+			width: 400px;
+			height: 80px;
+		}
+		.submit-btn {
+			margin-left: 369px;
+		}
+
+		.message {
+			margin: 10px 0;
+			padding: 10px 0 10px 10px;
+			border-bottom-right-radius: 5px;
+			background: #ddd;
+			img {
+				display: block;
+				float: left;
+				height: 40px;
+				width: auto;
+			}
+			.msg-container{
+				display: block;
+				float: left;
+				width: 89%;
+				margin-left: 10px;
+
+				.title {
+					font-weight: bold;
+					color: #333;
+				}
+				.author {
+					font-size: 10px;
+				}
+				.msg-body {
+					position: relative;
+					padding: 10px;
+					margin-left: 30px;
+					margin-top: 10px;
+					color: #555;
+					border-radius: 5px;
+					background: white;
+
+					&:before {
+						position: absolute;
+						content: "";
+						height: 0;
+						width: 0;
+						border-left: 10px solid transparent;
+						border-right: 10px solid transparent;
+						border-bottom: 10px solid white;
+						top: -10px;
+						left: 15px;
+					}
+				}
+			}
+		}
+	}
+}

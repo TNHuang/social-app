@@ -98,7 +98,7 @@ class User < ActiveRecord::Base
 
 		result = my_posts + left_posts + right_posts
 		#sort by udpated_at, so the most recent post is at top
-		result.sort_by {|post| post[:post].updated_at }.reverse[0..4]
+		result.sort_by {|post| post[:post].updated_at }.reverse[0..9]
 	end 
  	
  	def extract_post_info(posts)
@@ -107,7 +107,7 @@ class User < ActiveRecord::Base
 			:post => post,
 			:author => post.author.first_name + " " + post.author.last_name,
 			:author_id => post.author_id,
-			:post_age => post_age(post.created_at),
+			:post_age => Post.post_age(post.created_at),
 			}
 		end
 		result
@@ -136,28 +136,4 @@ class User < ActiveRecord::Base
 		BCrypt::Password.new(self.password_digest).is_password?(password)
 	end
 
-	def post_age(time_str)
-		secs = Time.now.to_i - time_str.to_i
-		if secs >= 31536000
-			years = secs/3153600
-			return "#{years} year#{'s' if years > 1}"
-		elsif secs >= 2592000
-			months = secs/259200
-			return "#{months} month#{'s' if months > 1}"
-		elsif secs >= 604800
-			weeks = secs/604800
-			return "#{weeks} week#{'s' if weeks > 1}"
-		elsif secs >= 86400
-			days = secs/86400
-			return "#{days} day#{'s' if days > 1}"
-		elsif secs >= 3600
-			hours = secs/3600
-			return "#{hours} hour#{'s' if hours > 1}"
-		elsif secs >= 60
-			minutes = secs/60
-			return "#{minutes} minute#{'s' if minutes > 1}"
-		else
-			return "#{secs} seconds"
-		end  
-	end
 end

@@ -1,4 +1,4 @@
-<div class='message clearfix'>
+<div class='message default clearfix'>
 	<img src="//a.disquscdn.com/1424807135/images/noavatar92.png" class="avatar">
 	<div class='msg-container'>
 		<div class='title'>
@@ -8,7 +8,36 @@
 			posted by <%= post.escape('author') %> <%= post.escape('postAge') %> ago
 		</div>
 		<div class='msg-body'>
+			<% if (post.escape('authorId') == SocialApp.current_user.id){ %>
+				<div class='btn-container'>
+					<div class='swap-view circular-btn'>&#9997<div class='hover-msg hidden'>update post<div class='down-arrow'></div></div></div>
+					<div class='delete-post circular-btn'>&times<div class='hover-msg hidden'>delete post<div class='down-arrow'></div></div></div>	
+				</div>
+			<% } %> 
 			<%= post.escape('body')%>
 		</div>
-	</div>	
+	</div>
+
+	
+</div>
+
+<div class='message edit hidden clearfix'>
+
+	<div class='swap-view cancel-btn'>&times</div>
+
+	<img src="//a.disquscdn.com/1424807135/images/noavatar92.png" class="avatar">
+	<form class='edit-post-form'>
+		<div class='msg-container'>	
+			<div class='btn-container'>
+
+			</div>
+			<input type='text' name='post[title]' class='title' value='<%= post.escape('title')%>'>
+			<div class='author'>
+				posted by <%= post.escape('author') %> <%= post.escape('postAge') %> ago
+			</div>
+			<input class='msg-body' name='post[body]' value='<%= post.escape('body')%>'>
+			<input type='hidden' name='post[author_id]' value='post'>
+			<input type='submit' value='update post' class='update-post'>
+		</div>
+	</form>
 </div>

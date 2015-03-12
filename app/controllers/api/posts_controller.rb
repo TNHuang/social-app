@@ -8,7 +8,7 @@ class Api::PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id]);
+		@post = Post.find(params[:id])
 		render :show
 	end
 
@@ -22,7 +22,7 @@ class Api::PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
-		unless @post.udpate(post_params)
+		unless @post.update(post_params)
 			render json: { error: @post.errors.full_messages }, status: :unprocessable_entity
 		end
 		render :show

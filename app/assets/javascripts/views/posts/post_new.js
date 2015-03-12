@@ -34,6 +34,7 @@ SocialApp.Views.PostNew = Backbone.CompositeView.extend({
 				
 				SocialApp.current_user.fetch({
 					success: function(){
+						response.authorId = response.escape('author_id');
 						view.addPost(response);
 					}
 				})

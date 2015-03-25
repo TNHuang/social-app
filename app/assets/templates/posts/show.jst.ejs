@@ -35,7 +35,7 @@
 			<div class='author'>
 				posted by <%= post.escape('author') %> <%= post.escape('postAge') %> ago
 			</div>
-			<input class='msg-body' name='post[body]' value='<%= post.escape('body')%>'>
+			<textarea class='msg-body' name='post[body]'><%= post.escape('body')%></textarea>
 			<input type='hidden' name='post[author_id]' value='post'>
 			<input type='submit' value='update post' class='update-post'>
 		</div>

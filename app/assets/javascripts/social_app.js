@@ -4,9 +4,18 @@ window.SocialApp = {
 	Views: {},
 	Routers: {},
 	initialize: function(){
-		SocialApp.current_user = {};
+		
 		var users = new SocialApp.Collections.Users();
 		var posts = new SocialApp.Collections.Posts();
+		var current_user_id = parseInt( $("#current-user-id").data("id") );
+
+		if (SocialApp.current_user === undefined){
+			if (current_user_id !== 0) {
+				SocialApp.current_user = users.getOrFetch(current_user_id);
+			} else {
+				SocialApp.current_user = {};
+			}
+		}
 
 		new SocialApp.Routers.Router({
 			$main: $("body"),

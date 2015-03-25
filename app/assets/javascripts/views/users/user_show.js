@@ -3,7 +3,6 @@ SocialApp.Views.UserShow = Backbone.CompositeView.extend({
 	
 	initialize: function(options){
 		this.user = options.user;
-		SocialApp.current_user = SocialApp.current_user || sessionStorage.current_user
 	},
 
 	render: function(){

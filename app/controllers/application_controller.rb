@@ -55,13 +55,5 @@ class ApplicationController < ActionController::Base
       render json: { error: "action require sign out" }, status: :unprocessable_entity
     end
   end
-
-  #this filter is use to prevent the page refresh to affect backbone view
-  def refresh_filter
-    if signed_in?
-      sign_out!
-      redirect_to "#"
-    end
-  end
   
 end

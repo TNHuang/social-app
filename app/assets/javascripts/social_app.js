@@ -13,7 +13,7 @@ window.SocialApp = {
 			if (current_user_id !== 0) {
 				SocialApp.current_user = users.getOrFetch(current_user_id);
 			} else {
-				SocialApp.current_user = {};
+				SocialApp.current_user = new SocialApp.Models.User();
 			}
 		}
 

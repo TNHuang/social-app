@@ -26,7 +26,6 @@ SocialApp.Views.PostShow = Backbone.CompositeView.extend({
 
 	swapView: function(event){
 		event.preventDefault();
-		console.log("swaped");
 		this.$(".default, .edit").toggleClass("hidden");
 	},
 
